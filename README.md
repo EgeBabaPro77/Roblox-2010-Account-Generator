@@ -5,3 +5,5 @@
 ***What does it do?***
 
 It finds the accounts opened in 2010 randomly in Roblox for you and gives it as output.
+
+## Warning
