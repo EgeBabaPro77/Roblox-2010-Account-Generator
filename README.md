@@ -17,7 +17,3 @@ Only accounts with random letters in username are correct!
 #### Wrong Example
 - roblox_user_12534324
 - tiixtiixiixxixtxiiit
-
-### Proof
-
-![Proof](https://media.discordapp.net/attachments/1065988562060857445/1070812594966900816/image.png?width=1062&height=671)
