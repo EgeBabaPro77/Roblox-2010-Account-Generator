@@ -4,8 +4,6 @@ from colorama import Fore, Back, Style
 import time
 import robloxpy
 
-id = 12532999
-
 print(Fore.RED + '''
  .d8888b.                           888 d8b          
 d88P  Y88b                          888 Y8P          
@@ -31,9 +29,12 @@ def get_username(user_id):
 while True:
     id = random.randint(12533000, 12535000)
     username = get_username(id)
+    time.sleep(0.2)
     if username == "0x000A":
         print(Fore.RED + f"UserId: {id} Not Found!")
-    else:
+    elif username[0:6] == "roblox":
+        continue
+    elif username.find("xitx") == -1:
         lol = f"https://api.roblox.com/users/{id}/onlinestatus/"
         responsex = requests.get(lol)
         time.sleep(0.2)
