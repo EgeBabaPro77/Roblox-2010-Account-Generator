@@ -1,4 +1,4 @@
-![Test](https://cdn.discordapp.com/attachments/1065988562060857445/1070808691546275880/image.png)
+![Test](https://imgur.com/a/YwkbIdV)
 
 ## Roblox 2010 Account Generator
 
