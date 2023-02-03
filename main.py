@@ -29,7 +29,7 @@ def get_username(user_id):
         return None
 
 while True:
-    id = random.randint(12533000, 12535000)
+    id = random.randint(12530000, 12535000)
     username = get_username(id)
     time.sleep(0.2)
     if username == "0x000A":
