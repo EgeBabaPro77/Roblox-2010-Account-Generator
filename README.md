@@ -1,4 +1,4 @@
-![Test](https://hizliresim.com/rsa0j54)
+![Test](https://media.discordapp.net/attachments/1205810966038839330/1206187199700148244/image.png)
 
 ## Roblox 2010 Account Generator
 
