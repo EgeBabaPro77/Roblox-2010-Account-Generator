@@ -21,28 +21,36 @@ print(Style.RESET_ALL)
 
 
 def get_username(user_id):
-    url = f"https://api.roblox.com/users/{user_id}"
+    url = f"https://www.roblox.com/avatar-thumbnails?params=%5B%7BuserId:{user_id}%7D%5D"
     response = requests.get(url)
+    
     if response.status_code == 200:
-        return response.json()['Username']
+        json_data = response.json()
+        
+        if json_data and isinstance(json_data, list) and len(json_data) > 0:
+            if json_data[0] is None or json_data[0]['name'] == "null":
+                return "Banlı"
+            else:
+                return json_data[0]['name']
+        else:
+            return None
     else:
         return None
 
 while True:
     id = random.randint(12530000, 12535000)
+    idd = [id]
     username = get_username(id)
     time.sleep(0.2)
-    if username == "0x000A":
+    if username == "Banlı":
         print(Fore.RED + f"UserId: {id} Not Found!")
     elif username[0:6] == "roblox":
         continue
-    elif username.find("xitx") == -1 and username.find("xitt") == -1:
-        lol = f"https://api.roblox.com/users/{id}/onlinestatus/"
-        responsex = requests.get(lol)
+    elif username.find("xitx") == -1 and username.find("xitt") == -1 and username.find("tixt") == -1:
         time.sleep(0.2)
-        a = responsex.json()['LastOnline']
-        b = a.split("-")
-        c = b[0]
+        a = requests.post('https://presence.roblox.com/v1/presence/last-online', json={'userIds': idd}).json()['lastOnlineTimestamps'][0]['lastOnline'].split('T')[0]
+        b = a[0:4]
+        c = int(b)
         x = robloxpy.User.External.CreationDate(id)
         y = x.split("/")
         z = int(y[2])
